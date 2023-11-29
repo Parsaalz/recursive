@@ -1,0 +1,17 @@
+//convert decimal to binary recursively
+#include<iostream>
+using namespace std;
+int decimal_to_binary(int n,int arzesh,int adad)
+{
+    if(n==0)
+        return adad;
+    int s=(n%2);
+    adad+=s*arzesh;
+    return decimal_to_binary(n/2,arzesh*10,adad);
+}
+int main()
+{
+    int n;cin>>n;
+    cout<<decimal_to_binary(n,1,0);
+    return 0;
+}
