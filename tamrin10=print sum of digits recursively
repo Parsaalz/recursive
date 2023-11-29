@@ -1,0 +1,16 @@
+//print sum of digits recursively
+#include<iostream>
+using namespace std;
+int sum_of_digits(int n,int adad)
+{
+    if(n==0)
+        return adad;
+    adad+=n%10;
+    return sum_of_digits(n/10,adad);
+}
+int main()
+{
+    int n;cin>>n;
+    cout<<sum_of_digits(n,0);
+    return 0;
+}
