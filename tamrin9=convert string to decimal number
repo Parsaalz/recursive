@@ -1,0 +1,17 @@
+//convert string to decimal number
+#include<iostream>
+using namespace std;
+int string_to_decimal(string s,int arzesh,int adad,int l)
+{
+    if(l==-1)
+        return adad;
+    adad+=(int(s[l])-48)*arzesh;
+    return string_to_decimal(s,arzesh*10,adad,l-1);
+
+}
+int main()
+{
+    string numbers;cin>>numbers;
+    cout<<string_to_decimal(numbers,1,0,numbers.length()-1);
+    return 0;
+}
