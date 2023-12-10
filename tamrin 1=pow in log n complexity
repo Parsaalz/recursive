@@ -1,0 +1,25 @@
+//recursive of the pow function in log n
+#include<bits/stdc++.h>
+using namespace std;
+int pow(int n,int m)
+{
+    if(m==0)
+    {
+        return 1;
+    }
+    if(m%2==0)
+    {
+        return pow(n,m/2)*pow(n,m/2);
+    }
+    else
+    {
+        int s=floor(m/2);
+        return pow(n,s)*pow(n,s)*n;
+    }
+}
+int main()
+{
+    int n,m;cin>>n>>m;
+    cout<<pow(n,m);
+    return 0;
+}
