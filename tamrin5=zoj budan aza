@@ -1,13 +1,19 @@
 //bazgashti tashkhis zoj budan azaye araye
 #include<iostream>
 using namespace std;
-int tedad_zoj(int* numbers,int s,int cnt)
+int tedad_zoj(int* numbers,int s)
 {
     if(s==-1)
-        return cnt;
+        return 0;
     if(numbers[s]%2==0)
-        cnt++;
-    return tedad_zoj(numbers,s-1,cnt);
+    {
+        return 1+ tedad_zoj(numbers,s-1);
+    }
+    else
+    {
+        return tedad_zoj(numbers,s-1);
+    }
+
 }
 int main()
 {
@@ -17,6 +23,6 @@ int main()
     {
         cin>>numbers[i];
     }
-    cout<<tedad_zoj(numbers,n-1,0);
+    cout<<tedad_zoj(numbers,n-1);
     return 0;
 }
