@@ -1,0 +1,22 @@
+//convert string to integer without power
+#include<bits/stdc++.h>
+using namespace std;
+int string_to_integer(string n,int x=0)
+{
+    if(((n.length()-1)-x)==-1)
+        return 0;
+    if(x==0)
+    {
+        return (int(n[n.length()-1])-48) + string_to_integer(n,x+1)*10;
+    }
+    else
+    {
+        return ((int(n[(n.length()-1)-x])-48))+string_to_integer(n,x+1)*10;
+    }
+}
+int main()
+{
+    string n;cin>>n;
+    cout<<string_to_integer(n);
+    return 0;
+}
